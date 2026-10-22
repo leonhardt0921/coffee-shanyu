@@ -1,6 +1,5 @@
 node_modules/
 dist/
-artifacts/
+.npm-cache/
 .DS_Store
 *.local
-.workbuddy-cache/
