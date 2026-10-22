@@ -1,0 +1,49 @@
+Browser tab: 1, Title: "山隅咖啡 · 一杯山野，一刻松弛", URL: "http://127.0.0.1:5187/".
+0 AXWebArea 山隅咖啡 · 一杯山野，一刻松弛, URL: 127.0.0.1:5187/
+	1 container 我的购物袋
+		2 container
+			3 text SHANYU COFFEE
+			4 heading 我的购物袋, Value: 2, ID: modal-title
+				5 text 我的购物袋
+			6 button 关闭弹窗
+		19 container
+			20 heading 云朵拿铁49 杯半价, Value: 3
+				21 text 云朵拿铁 49  杯半价
+			22 text ¥25.00  ·  大杯  · 已省 ¥612.50
+			23 container 云朵拿铁杯型
+				24 checkbox 中杯, Value: 0
+				25 checkbox 大杯 +3, Value: 1
+			26 button 删除 云朵拿铁
+			27 button 减少 云朵拿铁
+			28 container 云朵拿铁数量
+				29 text 99
+			30 button (disabled) 增加 云朵拿铁
+		31 button 清空购物袋
+		32 text BEST OFFER, PICKED FOR YOU
+		33 heading 会员 95 折 与满减不叠加, Value: 3
+			34 text 会员 95 折  与满减不叠加
+		35 switch Description: 会员95折, Value: 0
+		36 content list
+			37 container
+				38 text 商品小计 ¥2475.00
+			39 container
+				40 text 第二杯半价  · 49 杯半价 （仅咖啡） −¥612.50
+			41 container
+				42 text 半价后小计 ¥1862.50
+			43 container
+				44 text 满  ¥50.00  减  ¥8.00 已选用 −¥8.00
+			45 container
+				46 text 会员 95 折 未开启 ¥0.00
+		47 text 已选用「满 ¥50.00 减 ¥8.00」。开启会员 95 折后会自动比较，选更省的一项。
+		48 text 商品小计
+		49 text ¥2475.00
+		50 text 优惠合计
+		51 text （已省 ¥620.50）
+		52 text −¥620.50
+		53 text 预估合计
+		54 text ¥1854.50
+		55 container
+			56 text 仅为本地金额试算，不下单、不扣款。
+			57 text 商品图片为原创 AI 概念图，同系列口味共用示意图片。
+
+The focused UI element is 0 AXWebArea 山隅咖啡 · 一杯山野，一刻松弛, URL: 127.0.0.1:5187/

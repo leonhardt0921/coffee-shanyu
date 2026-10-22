@@ -1,9 +1,14 @@
-import { useRef, useState } from 'react';
-import { type Cart, cartSubtotal, normalizeCart, products } from './data';
-export const CART_KEY = 'shanyu-cart-v1';
+import { useMemo, useRef, useState } from 'react';
+import { type Cart, type Entry, type Size, cartEntries, lineKey, normalizeCart, parseLine } from './data';
+export const CART_KEY = 'shanyu-cart-v2';
+const LEGACY_KEY = 'shanyu-cart-v1';
 function readCart(): Cart {
-  try { return normalizeCart(JSON.parse(localStorage.getItem(CART_KEY) ?? '{}')); }
-  catch { return {}; }
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    // Bags saved before cup sizes existed are keyed by bare product id.
+    if (raw === null) { const legacy = localStorage.getItem(LEGACY_KEY); return legacy ? normalizeCart(JSON.parse(legacy)) : {}; }
+    return normalizeCart(JSON.parse(raw));
+  } catch { return {}; }
 }
 export function useCart() {
   const [cart, setCart] = useState<Cart>(readCart);
@@ -21,15 +26,28 @@ export function useCart() {
       return false;
     }
   };
-  const changeQuantity = (id: string, delta: number) => {
-    if (!products.some(p => p.id === id)) return false;
+  const changeQuantity = (key: string, delta: number) => {
+    if (!parseLine(key)) return false;
     if (!Number.isSafeInteger(delta)) return false;
     const next = { ...latest.current };
-    const value = Math.min(99, Math.max(0, (next[id] ?? 0) + delta));
-    if (value) next[id] = value; else delete next[id];
+    const value = Math.min(99, Math.max(0, (next[key] ?? 0) + delta));
+    if (value) next[key] = value; else delete next[key];
     return save(next);
   };
-  const remove = (id: string) => { const next = { ...latest.current }; delete next[id]; return save(next); };
-  return { cart, changeQuantity, remove, clear: () => save({}), storageError,
-    count: Object.values(cart).reduce((a, b) => a + b, 0), subtotal: cartSubtotal(cart) };
+  /** Moving a line to another cup size merges into an existing line of that size. */
+  const changeSize = (key: string, size: Size) => {
+    const parsed = parseLine(key);
+    if (!parsed || parsed.size === size) return false;
+    const next = { ...latest.current };
+    const qty = next[key] ?? 0;
+    if (!qty) return false;
+    delete next[key];
+    const target = lineKey(parsed.product.id, size);
+    next[target] = Math.min(99, (next[target] ?? 0) + qty);
+    return save(next);
+  };
+  const remove = (key: string) => { const next = { ...latest.current }; delete next[key]; return save(next); };
+  const entries = useMemo<Entry[]>(() => cartEntries(cart), [cart]);
+  return { cart, entries, changeQuantity, changeSize, remove, clear: () => save({}), storageError,
+    count: entries.reduce((sum, e) => sum + e.qty, 0) };
 }

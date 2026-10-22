@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: empty
+ok 1 - empty
+  ---
+  duration_ms: 0.752375
+  type: 'test'
+  ...
+# Subtest: empty member
+ok 2 - empty member
+  ---
+  duration_ms: 0.1015
+  type: 'test'
+  ...
+# Subtest: one coffee
+ok 3 - one coffee
+  ---
+  duration_ms: 0.116625
+  type: 'test'
+  ...
+# Subtest: two equal coffees
+ok 4 - two equal coffees
+  ---
+  duration_ms: 0.058042
+  type: 'test'
+  ...
+# Subtest: two unequal coffees: cheaper one half price
+ok 5 - two unequal coffees: cheaper one half price
+  ---
+  duration_ms: 0.04575
+  type: 'test'
+  ...
+# Subtest: three equal coffees
+ok 6 - three equal coffees
+  ---
+  duration_ms: 0.040416
+  type: 'test'
+  ...
+# Subtest: three unequal coffees
+ok 7 - three unequal coffees
+  ---
+  duration_ms: 0.038125
+  type: 'test'
+  ...
+# Subtest: four equal coffees
+ok 8 - four equal coffees
+  ---
+  duration_ms: 0.074416
+  type: 'test'
+  ...
+# Subtest: four unequal coffees
+ok 9 - four unequal coffees
+  ---
+  duration_ms: 0.243792
+  type: 'test'
+  ...
+# Subtest: five coffees
+ok 10 - five coffees
+  ---
+  duration_ms: 0.223166
+  type: 'test'
+  ...
+# Subtest: desserts never half price
+ok 11 - desserts never half price
+  ---
+  duration_ms: 0.107875
+  type: 'test'
+  ...
+# Subtest: one coffee plus dessert is not a pair
+ok 12 - one coffee plus dessert is not a pair
+  ---
+  duration_ms: 0.027042
+  type: 'test'
+  ...
+# Subtest: dessert excluded from coffee pairing
+ok 13 - dessert excluded from coffee pairing
+  ---
+  duration_ms: 0.022542
+  type: 'test'
+  ...
+# Subtest: original subtotal exceeds 50 but discounted subtotal does not
+ok 14 - original subtotal exceeds 50 but discounted subtotal does not
+  ---
+  duration_ms: 0.018
+  type: 'test'
+  ...
+# Subtest: exactly 50 after half price
+ok 15 - exactly 50 after half price
+  ---
+  duration_ms: 0.016959
+  type: 'test'
+  ...
+# Subtest: large cup extra is included in half price
+ok 16 - large cup extra is included in half price
+  ---
+  duration_ms: 0.016708
+  type: 'test'
+  ...
+# Subtest: different sizes are paired by full unit price
+ok 17 - different sizes are paired by full unit price
+  ---
+  duration_ms: 0.015667
+  type: 'test'
+  ...
+# Subtest: member discount after half price
+ok 18 - member discount after half price
+  ---
+  duration_ms: 0.01675
+  type: 'test'
+  ...
+# Subtest: threshold beats member
+ok 19 - threshold beats member
+  ---
+  duration_ms: 0.016125
+  type: 'test'
+  ...
+# Subtest: member beats threshold
+ok 20 - member beats threshold
+  ---
+  duration_ms: 0.016209
+  type: 'test'
+  ...
+# Subtest: non-member cannot get 95 percent price
+ok 21 - non-member cannot get 95 percent price
+  ---
+  duration_ms: 0.068375
+  type: 'test'
+  ...
+# Subtest: tie applies only one offer
+ok 22 - tie applies only one offer
+  ---
+  duration_ms: 0.017375
+  type: 'test'
+  ...
+# Subtest: member rounding to cent
+ok 23 - member rounding to cent
+  ---
+  duration_ms: 0.016042
+  type: 'test'
+  ...
+# Subtest: threshold boundary 4999 cents after half price
+ok 24 - threshold boundary 4999 cents after half price
+  ---
+  duration_ms: 0.044
+  type: 'test'
+  ...
+# Subtest: threshold boundary 5000 cents after half price
+ok 25 - threshold boundary 5000 cents after half price
+  ---
+  duration_ms: 0.017583
+  type: 'test'
+  ...
+# Subtest: threshold boundary 5001 cents after half price
+ok 26 - threshold boundary 5001 cents after half price
+  ---
+  duration_ms: 0.016459
+  type: 'test'
+  ...
+# Subtest: pairing is independent of input order; line amounts reconcile
+ok 27 - pairing is independent of input order; line amounts reconcile
+  ---
+  duration_ms: 0.047084
+  type: 'test'
+  ...
+# Subtest: 780 coffee combinations of 1–4 cups agree with exhaustive pairing
+ok 28 - 780 coffee combinations of 1–4 cups agree with exhaustive pairing
+  ---
+  duration_ms: 2.395625
+  type: 'test'
+  ...
+# Subtest: quantity changes 2 -> 3 -> 4 -> 3 recalculate discounts
+ok 29 - quantity changes 2 -> 3 -> 4 -> 3 recalculate discounts
+  ---
+  duration_ms: 2.31975
+  type: 'test'
+  ...
+# Subtest: size change crosses threshold and removes threshold discount
+ok 30 - size change crosses threshold and removes threshold discount
+  ---
+  duration_ms: 0.911875
+  type: 'test'
+  ...
+# Subtest: adding/removing products recalculates pair and exclusive discounts
+ok 31 - adding/removing products recalculates pair and exclusive discounts
+  ---
+  duration_ms: 0.232167
+  type: 'test'
+  ...
+# Subtest: size merge below limit preserves all cups
+ok 32 - size merge below limit preserves all cups
+  ---
+  duration_ms: 0.076833
+  type: 'test'
+  ...
+# Subtest: legacy bags migrate without losing quantities
+ok 33 - legacy bags migrate without losing quantities
+  ---
+  duration_ms: 0.066334
+  type: 'test'
+  ...
+# Subtest: failed persistence does not change saved cart
+ok 34 - failed persistence does not change saved cart
+  ---
+  duration_ms: 0.064375
+  type: 'test'
+  ...
+# Subtest: REGRESSION: member-winning order must not label threshold as selected
+not ok 35 - REGRESSION: member-winning order must not label threshold as selected
+  ---
+  duration_ms: 2.571291
+  type: 'test'
+  location: '/Users/leonhardt0921/workspace/coffee-project/tests/promotions.test.cjs:165:1'
+  failureType: 'testCodeFailure'
+  error: 'Only the member offer should be selected'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '<li class="promo-choice is-muted"><span>满 ¥50.00 减 ¥8.00<em>已选用</em></span><strong>−¥8.00</strong></li>'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (/Users/leonhardt0921/workspace/coffee-project/tests/promotions.test.cjs:170:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: REGRESSION: changing cup size must not silently discard cups at limit
+not ok 36 - REGRESSION: changing cup size must not silently discard cups at limit
+  ---
+  duration_ms: 0.212458
+  type: 'test'
+  location: '/Users/leonhardt0921/workspace/coffee-project/tests/promotions.test.cjs:172:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Reject the merge or preserve overflow; do not remove a purchased cup
+    
+    99 !== 100
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 100
+  actual: 99
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/leonhardt0921/workspace/coffee-project/tests/promotions.test.cjs:176:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 34
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 199.578125
