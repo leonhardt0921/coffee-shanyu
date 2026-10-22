@@ -1,0 +1,12 @@
+{
+  "id": "cupsize-v1",
+  "frozenAt": "2026-10-23T00:44:12.033222+08:00",
+  "baselineBusinessCommit": "1a40cb16d3b57791ed482645451ad095b7ea630e",
+  "status": "not-run-in-workbuddy",
+  "files": {
+    "docs/FEATURE-SPEC.md": "4808494bc74eb05a82499baf29ab3554a847bad8f5b421f33ad2b4b0f6220296",
+    "docs/ACCEPTANCE.md": "1b7ec2b1c44e5dc771e53893d1f2270f7fff0bd88eec7594ab698604ce94ee24",
+    "docs/E2E-PLAN.md": "fe8e55e61bf860a173603f7a080e72021065a9fc3551064f1ce11c2a158aa020",
+    "docs/EXPERIMENT.md": "8bc20c715fcd396602cc5f277657a672b350a5c6c4604179ca5a9c5a850b4aa8"
+  }
+}

@@ -12,10 +12,12 @@
     "build": "npm run typecheck && vite build",
     "serve:dist": "node scripts/serve-dist.mjs",
     "test:unit": "vitest run",
-    "test:e2e": "playwright test",
-    "test:e2e:prod": "E2E_MODE=production playwright test",
+    "test:e2e": "node scripts/project-runtime.mjs e2e",
+    "test:e2e:prod": "node scripts/project-runtime.mjs production",
     "test:report": "playwright show-report artifacts/e2e-development/html",
-    "verify": "npm run typecheck && npm run test:unit && npm run test:e2e && npm run build && npm run test:e2e:prod"
+    "verify": "npm run typecheck && npm run test:unit && npm run test:e2e && npm run build && npm run test:e2e:prod",
+    "setup:browsers": "node scripts/project-runtime.mjs browsers",
+    "check:contract": "node scripts/check-contract.mjs"
   },
   "dependencies": {
     "react": "19.3.1",
